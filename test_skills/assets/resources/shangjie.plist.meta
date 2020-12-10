@@ -1,6 +1,7 @@
 {
   "ver": "1.2.4",
   "uuid": "fed2acaa-e46e-49d9-be34-567db269fa68",
+  "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
   "size": {
     "width": 2048,
     "height": 2048
@@ -10,6 +11,7 @@
     "bzmcs-top.png": {
       "ver": "1.0.4",
       "uuid": "4295c2b0-f594-4a62-82d3-94713f9e373c",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -31,6 +33,7 @@
     "cs-btn.png": {
       "ver": "1.0.4",
       "uuid": "6be2207f-3937-4b1c-9412-c84bafbb6f92",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -52,6 +55,7 @@
     "cs-input-kuang.png": {
       "ver": "1.0.4",
       "uuid": "ab4baae3-98b4-43c8-907d-5375353462f1",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -73,6 +77,7 @@
     "fangshi.png": {
       "ver": "1.0.4",
       "uuid": "235d5b01-baf1-4248-835c-70603a93003c",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -94,6 +99,7 @@
     "guishi.png": {
       "ver": "1.0.4",
       "uuid": "e8e4f58e-d42a-44e8-940c-af440a501791",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -115,6 +121,7 @@
     "gzmcs-top.png": {
       "ver": "1.0.4",
       "uuid": "4a9b084f-c7f6-4f1b-ae55-67ad1381478a",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -136,6 +143,7 @@
     "label-bg.png": {
       "ver": "1.0.4",
       "uuid": "14ec909d-9132-4067-9deb-ef0d3e88cce2",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -157,6 +165,7 @@
     "left-btn-bg.png": {
       "ver": "1.0.4",
       "uuid": "13242bae-89ff-41bd-aa65-a8f849e9f070",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -178,6 +187,7 @@
     "left-btn-child.png": {
       "ver": "1.0.4",
       "uuid": "6f1e5cc7-2c5b-47f8-b137-2b2c2b3b01c7",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -199,6 +209,7 @@
     "left-n.png": {
       "ver": "1.0.4",
       "uuid": "c9cd8ca9-6d42-454e-8021-fa5331be7fa9",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -220,6 +231,7 @@
     "left-y.png": {
       "ver": "1.0.4",
       "uuid": "9cb5c98f-1c04-4418-ab87-8cf295d7dfd4",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -241,6 +253,7 @@
     "menren-pop.png": {
       "ver": "1.0.4",
       "uuid": "0c2b7217-b517-49ee-a4c9-2d1f8f9f08b5",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -262,6 +275,7 @@
     "next-page.png": {
       "ver": "1.0.4",
       "uuid": "7ab25564-f0a8-4725-b720-fb370703a8d5",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -283,6 +297,7 @@
     "pop-icon.png": {
       "ver": "1.0.4",
       "uuid": "cdaab7d6-e207-4707-8b70-0abf7f1812f5",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -304,6 +319,7 @@
     "right-kuang.png": {
       "ver": "1.0.4",
       "uuid": "2bd5998a-b94b-421f-bef7-9be96592fa61",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -325,6 +341,7 @@
     "right-main-bg.png": {
       "ver": "1.0.4",
       "uuid": "d9c8cd15-97d9-479c-bbf0-55279a2b6e68",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -346,6 +363,7 @@
     "shangmeng.png": {
       "ver": "1.0.4",
       "uuid": "78c3e72e-652d-42d7-a20c-84886a03180f",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -367,6 +385,7 @@
     "sm-pop.png": {
       "ver": "1.0.4",
       "uuid": "6369d230-85e7-4281-8205-514db40206e4",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -388,6 +407,7 @@
     "spjl.png": {
       "ver": "1.0.4",
       "uuid": "37fd7003-37c1-4ff9-bec2-d19a9fd5851f",
+      "rawTextureUuid": "d657512b-ef50-46f4-967b-182025f18042",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
