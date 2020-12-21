@@ -3,9 +3,10 @@ const Buff = [
     id: 1,
     actionName: "buff1",
     buffName: "天佑",
-    target: false, //true->buff出现在施法人的位置，false->出现在目标身上，一般是攻击或者减益情况下才需要判断，默认为false
+    target: false, //true->buff出现在施法人的位置，false->出现在目标身上，一般是攻击或者减益情况下才需要判断，默认为false,=--测试用
     pos: false, //true->显示在在人/怪的头顶，false->以人/怪为定点，默认为false
     zIndex: true, //true->显示在人/怪的最上层，默认为false
+    bw: 2, //1->头部上层，2->身体上层，3->身体下层，4->脚下下层----测试用
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: true,
+    bw: 2,
   },
   {
     id: 101,
@@ -22,6 +24,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: false,
+    bw: 3,
   },
   {
     id: 102,
@@ -30,6 +33,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: false,
+    bw: 3,
   },
   {
     id: 103,
@@ -38,6 +42,7 @@ const Buff = [
     target: true,
     pos: false,
     zIndex: false,
+    bw: 4,
   },
   {
     id: 105,
@@ -46,6 +51,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: false,
+    bw: 4,
   },
   {
     id: 106,
@@ -54,6 +60,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: true,
+    bw: 2,
   },
   {
     id: 111,
@@ -62,6 +69,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: false,
+    bw: 3,
   },
   {
     id: 112,
@@ -70,6 +78,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: false,
+    bw: 3,
   },
   {
     id: 113,
@@ -78,6 +87,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: false,
+    bw: 3,
   },
   {
     id: 201,
@@ -86,6 +96,7 @@ const Buff = [
     target: false,
     pos: true,
     zIndex: true,
+    bw: 1,
   },
   {
     id: 202,
@@ -94,6 +105,7 @@ const Buff = [
     target: false,
     pos: true,
     zIndex: true,
+    bw: 1,
   },
   {
     id: 301,
@@ -102,6 +114,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: true,
+    bw: 2,
   },
   {
     id: 401,
@@ -110,6 +123,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: true,
+    bw: 2,
   },
   {
     id: 402,
@@ -118,6 +132,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: true,
+    bw: 2,
   },
   {
     id: 404,
@@ -126,6 +141,7 @@ const Buff = [
     target: true,
     pos: false,
     zIndex: false,
+    bw: 4,
   },
   {
     id: 501,
@@ -134,14 +150,16 @@ const Buff = [
     target: false,
     pos: true,
     zIndex: true,
+    bw: 1,
   },
   {
     id: 506,
     actionName: "buff506",
     buffName: "残念",
-    target:true,
+    target: true,
     pos: false,
     zIndex: false,
+    bw: 3,
   },
   {
     id: 601,
@@ -150,6 +168,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: false,
+    bw: 4,
   },
   {
     id: 602,
@@ -158,6 +177,7 @@ const Buff = [
     target: false,
     pos: false,
     zIndex: false,
+    bw: 4,
   },
   {
     id: 603,
@@ -166,6 +186,7 @@ const Buff = [
     target: false,
     pos: true,
     zIndex: true,
+    bw: 1,
   },
 ];
 export default Buff;

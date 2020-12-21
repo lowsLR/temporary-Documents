@@ -24,6 +24,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1, // 1-> 主技能以人/怪为定点，2->以战斗盘中心为定点
     buffName: [], //buff名-测试用的
+    yj: [], //印记--测试用
   },
   {
     id: 102,
@@ -39,6 +40,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["501"],
+    yj: [],
   },
   {
     id: 103,
@@ -54,6 +56,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 104,
@@ -69,6 +72,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["101"],
+    yj: [],
   },
   {
     id: 105,
@@ -84,6 +88,7 @@ const skillsActionJson = [
     programme: 1,
     target: 2,
     buffName: [],
+    yj: [],
   },
   {
     id: 201,
@@ -99,6 +104,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 202,
@@ -114,6 +120,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["603"],
+    yj: [],
   },
   {
     id: 203,
@@ -129,6 +136,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["102"],
+    yj: [],
   },
   {
     id: 204,
@@ -144,6 +152,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["103"],
+    yj: [],
   },
   {
     id: 205,
@@ -159,6 +168,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["404"],
+    yj: [],
   },
   {
     id: 301,
@@ -174,6 +184,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 302,
@@ -189,6 +200,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 303,
@@ -204,6 +216,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 304,
@@ -219,6 +232,7 @@ const skillsActionJson = [
     programme: 2,
     target: 2,
     buffName: [],
+    yj: [],
   },
   {
     id: 305,
@@ -234,6 +248,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["112"],
+    yj: [],
   },
   {
     id: 401,
@@ -249,6 +264,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 402,
@@ -264,6 +280,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["105"],
+    yj: [],
   },
   {
     id: 403,
@@ -279,6 +296,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 404,
@@ -294,6 +312,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["2"],
+    yj: [],
   },
   {
     id: 405,
@@ -309,6 +328,7 @@ const skillsActionJson = [
     programme: 2,
     target: 2,
     buffName: ["106"],
+    yj: [],
   },
   {
     id: 501,
@@ -324,6 +344,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 502,
@@ -339,6 +360,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: ["xiuLuoYin"],
   },
   {
     id: 503,
@@ -354,6 +376,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: ["xiuLuoYin"],
   },
   {
     id: 504,
@@ -369,6 +392,7 @@ const skillsActionJson = [
     programme: 1,
     target: 2,
     buffName: [],
+    yj: ["xiuLuoYin"],
   },
   {
     id: 505,
@@ -384,6 +408,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1101,
@@ -399,6 +424,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1102,
@@ -414,6 +440,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["105"],
+    yj: [],
   },
   {
     id: 1103,
@@ -429,6 +456,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1104,
@@ -444,6 +472,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1105,
@@ -459,6 +488,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["401"],
+    yj: [],
   },
   {
     id: 1201,
@@ -474,6 +504,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1202,
@@ -489,6 +520,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1203,
@@ -504,6 +536,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["201"],
+    yj: [],
   },
   {
     id: 1204,
@@ -519,6 +552,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["113"],
+    yj: [],
   },
   {
     id: 1205,
@@ -534,6 +568,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1301,
@@ -549,6 +584,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1302,
@@ -564,6 +600,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["601"],
+    yj: [],
   },
   {
     id: 1303,
@@ -579,6 +616,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["602"],
+    yj: [],
   },
   {
     id: 1304,
@@ -594,6 +632,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1305,
@@ -609,6 +648,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1401,
@@ -624,6 +664,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1402,
@@ -639,6 +680,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["402"],
+    yj: [],
   },
   {
     id: 1403,
@@ -654,6 +696,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1404,
@@ -669,6 +712,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 1405,
@@ -684,11 +728,12 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["506"],
+    yj: [],
   },
   {
     id: 2101,
     actionName: "skill2101",
-    skillName: "灵风曲",
+    skillName: "风雷曲",
     skillType: 2,
     skillNum: 5,
     prEffect: false,
@@ -699,6 +744,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2102,
@@ -714,6 +760,7 @@ const skillsActionJson = [
     programme: 2,
     target: 2,
     buffName: ["202"],
+    yj: [],
   },
   {
     id: 2103,
@@ -729,6 +776,7 @@ const skillsActionJson = [
     programme: 2,
     target: 2,
     buffName: [],
+    yj: [],
   },
   {
     id: 2104,
@@ -744,6 +792,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2105,
@@ -759,6 +808,7 @@ const skillsActionJson = [
     programme: 2,
     target: 2,
     buffName: ["1"],
+    yj: [],
   },
   {
     id: 2201,
@@ -774,6 +824,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2202,
@@ -789,6 +840,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["111"],
+    yj: [],
   },
   {
     id: 2203,
@@ -804,6 +856,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2204,
@@ -819,6 +872,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2205,
@@ -834,6 +888,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2301,
@@ -849,6 +904,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2302,
@@ -864,6 +920,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2303,
@@ -879,6 +936,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2304,
@@ -894,6 +952,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: [],
+    yj: [],
   },
   {
     id: 2305,
@@ -909,6 +968,7 @@ const skillsActionJson = [
     programme: 3,
     target: 1,
     buffName: ["301"],
+    yj: [],
   },
 ];
 export default skillsActionJson;

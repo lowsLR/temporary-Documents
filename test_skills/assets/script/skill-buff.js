@@ -1,51 +1,52 @@
 import JN from "./skillsActionJson.js";
 import BF from "./buffs.js";
+import VS from "./vacantSkils";
 const mp = [
   {
-    x: 265,
-    y: -20,
+    x: 256,
+    y: -42,
   },
   {
-    x: 135,
-    y: 65,
+    x: 109,
+    y: 43,
   },
   {
     x: 350,
-    y: 65,
+    y: 43,
   },
   {
     x: 420,
-    y: -140,
+    y: -124,
   },
   {
-    x: 170,
-    y: -110,
+    x: 173,
+    y: -124,
   },
 ];
 const rp = [
   {
-    x: -265,
-    y: -20,
+    x: -256,
+    y: -42,
   },
   {
-    x: -135,
-    y: 65,
+    x: -109,
+    y: 43,
   },
   {
     x: -350,
-    y: 65,
+    y: 43,
   },
   {
     x: -420,
-    y: -140,
+    y: -124,
   },
   {
-    x: -170,
-    y: -110,
+    x: -173,
+    y: -124,
   },
   {
-    x: -300,
-    y: -110,
+    x: -295,
+    y: -124,
   },
 ];
 const action = [
@@ -260,17 +261,68 @@ cc.Class({
       type: dragonBones.ArmatureDisplay,
       default: [],
     },
+    editbox: cc.EditBox,
     // 下拉菜单模块
     ComboBoxPrefab: cc.Prefab, // 下拉菜单预制体
     comboboxNode: cc.Node, // 下拉菜单根节点
+    rSign: {
+      type: cc.Node,
+      default: [],
+    },
+    mSign: {
+      type: cc.Node,
+      default: [],
+    },
+    yinJi: {
+      type: cc.Prefab,
+      default: [],
+    },
+    vacantNode: cc.Node, // 下拉菜单根节点
+    vSkill: {
+      type: dragonBones.ArmatureDisplay,
+      default: [],
+    },
   },
 
   // LIFE-CYCLE CALLBACKS:
 
   onLoad() {
     this.initData();
-    // 记录当前buff数量
-    this.buffNum = 0;
+    this.editbox.node.on("editing-return", this.search.bind(this));
+    this.yj = 0; // 默认第一个印记
+  },
+  // 匹配印记
+  switchYinJi(str) {
+    switch (str) {
+      case "xiuLuoYin":
+        this.yj = 0;
+        break;
+    }
+  },
+  // 添加印记
+  addYinJi(type, i, str) {
+    this.switchYinJi(str);
+    let node = cc.instantiate(this.yinJi[this.yj]);
+    let rm = type == this.monsters ? this.mSign : this.rSign;
+    if (rm[i].children.length > 4) {
+      rm[i].children[0].destroy();
+    }
+    rm[i].addChild(node);
+    // console.log(rm[i], "===>>>??");
+  },
+  search(editbox) {
+    // console.log(editbox.string, "====>xxxxxx");
+    let arr = [];
+    let reg = new RegExp(editbox.string);
+    JN.forEach((item, index) => {
+      if (item.skillName.match(reg)) {
+        return arr.push(index);
+      }
+    });
+    console.log(arr, "==>iiiii");
+    if (arr[0]) {
+      this.GetSelectedItem(arr[0]);
+    }
   },
   // 初始化数据
   initData() {
@@ -280,11 +332,11 @@ cc.Class({
 
     // 人的buff记录
     this.rBuffNum = [
-      { tb: 0, st: 0, jx: 0 },
-      { tb: 0, st: 0, jx: 0 },
-      { tb: 0, st: 0, jx: 0 },
-      { tb: 0, st: 0, jx: 0 },
-      { tb: 0, st: 0, jx: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
     ];
     this.rBuff = [
       {
@@ -320,11 +372,11 @@ cc.Class({
     ];
     // 怪的buff记录
     this.mBuffNum = [
-      { tb: 0, st: 0, jx: 0 },
-      { tb: 0, st: 0, jx: 0 },
-      { tb: 0, st: 0, jx: 0 },
-      { tb: 0, st: 0, jx: 0 },
-      { tb: 0, st: 0, jx: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
+      { tb: 0, st: 0, jx: 0, sth: 0 },
     ];
     this.mBuff = [
       {
@@ -358,14 +410,16 @@ cc.Class({
         jxbf: this.mjxbf5,
       },
     ];
+
+    //测试用vacant
+    this.vacantIndex = 0;
+    this.vacantComBox();
   },
-
   start() {},
-
   /**
    * 下拉菜单模块
    */
-  initComboBox() {
+  initComboBox(index = 0) {
     let node = cc.instantiate(this.ComboBoxPrefab);
     let areaNameArr = [];
     for (let i = 0; i < JN.length; i++) {
@@ -443,8 +497,10 @@ cc.Class({
           }
           if (s.buffName.length) {
             let b = this.isSkillsBuff(s);
-            // this.imBuffSkills(i, b, cc.v2(erRm[i].x, erRm[i].y));
             this.imBuffSkills(b, rmType, i);
+          }
+          if (s.yj.length) {
+            this.addYinJi(rmType, i, s.yj[0]);
           }
         }
       });
@@ -464,18 +520,21 @@ cc.Class({
     let prPos = cc.v2(rm[0].x, rm[0].y); //主技能中心点
     this.imSkills(0, s, prPos).then(() => {
       for (let i = 0; i < s.skillNum; i++) {
-        let erPos = cc.v2(erRm[i].x, erRm[i].y); //次技能坐标
-        // if (s.skillType == 1 && !s.prEffect) {
-        //   erPos = cc.v2(erRm[i + 1].x, erRm[i + 1].y);
-        // }
-        this.imErSkills(i, s, erPos).then(() => {
+        let w = i;
+        if (s.seEffect && !s.prEffect) {
+          w = i + 1;
+        }
+        let erPos = cc.v2(erRm[w].x, erRm[w].y); //次技能坐标
+        this.imErSkills(w, s, erPos).then(() => {
           if (rmType != this.roles) {
-            this.impAction(rmType[i], 1);
+            this.impAction(rmType[w], 1);
           }
           if (s.buffName.length) {
             let b = this.isSkillsBuff(s);
-            // this.imBuffSkills(i, b, erPos);
-            this.imBuffSkills(b, rmType, i);
+            this.imBuffSkills(b, rmType, w);
+          }
+          if (s.yj.length) {
+            this.addYinJi(rmType, w, s.yj[0]);
           }
         });
       }
@@ -493,21 +552,23 @@ cc.Class({
       rmType = this.monsters;
     }
     for (let i = 0; i < s.skillNum; i++) {
-      let prPos = cc.v2(rm[i].x, rm[i].y);
-      let erPos = cc.v2(erRm[i].x, erRm[i].y);
-    //   if (s.skillType == 1 && !s.prEffect) {
-    //     prPos = cc.v2(rm[i + 1].x, rm[i + 1].y);
-    //     erPos = cc.v2(erRm[i + 1].x, erRm[i + 1].y);
-    //   }
-      this.imSkills(i, s, prPos).then(() => {
-        this.imErSkills(i, s, erPos).then(() => {
+      let w = i;
+      if (s.seEffect && !s.prEffect) {
+        w = i + 1;
+      }
+      let prPos = cc.v2(rm[w].x, rm[w].y);
+      let erPos = cc.v2(erRm[w].x, erRm[w].y);
+      this.imSkills(w, s, prPos).then(() => {
+        this.imErSkills(w, s, erPos).then(() => {
           if (rmType != this.roles) {
-            this.impAction(rmType[i], 1);
+            this.impAction(rmType[w], 1);
           }
           if (s.buffName.length) {
             let b = this.isSkillsBuff(s);
-            // this.imBuffSkills(i, b, erPos);
-            this.imBuffSkills(b, rmType, i);
+            this.imBuffSkills(b, rmType, w);
+          }
+          if (s.yj.length) {
+            this.addYinJi(rmType, w, s.yj[0]);
           }
         });
       });
@@ -539,26 +600,30 @@ cc.Class({
       rmType = this.monsters;
     }
     for (let i = 0; i < s.skillNum; i++) {
-      let prPos = cc.v2(rm[i].x, rm[i].y);
-    //   if (s.skillType == 1 && !s.prEffect) {
-    //     prPos = cc.v2(rm[i + 1].x, rm[i + 1].y);
-    //   }
+      let w = i;
+      if (s.skillType == 1 && !s.prEffect) {
+        w = i + 1;
+      }
+      let prPos = cc.v2(rm[w].x, rm[w].y);
       if (s.id == 2205 || s.id == 1305) {
         //复活
         prPos = cc.v2(rp[5].x, rp[5].y);
-        this.imSkills(i, s, prPos).then(() => {
+        this.imSkills(w, s, prPos).then(() => {
           this.impFuHuo(this.roles[5], 0);
+          this.addYinJi(this.roles, 5, s.yj[0]);
           return;
         });
       }
-      this.imSkills(i, s, prPos).then(() => {
+      this.imSkills(w, s, prPos).then(() => {
         if (rmType != this.roles) {
-          this.impAction(rmType[i], 1);
+          this.impAction(rmType[w], 1);
         }
         if (s.buffName.length) {
           let b = this.isSkillsBuff(s);
-          // this.imBuffSkills(i, b, prPos);
-          this.imBuffSkills(b, rmType, i);
+          this.imBuffSkills(b, rmType, w);
+        }
+        if (s.yj.length && s.id != 1305) {
+          this.addYinJi(rmType, w, s.yj[0]);
         }
       });
     }
@@ -573,16 +638,22 @@ cc.Class({
       rm = mp;
       rmType = this.monsters;
     }
-    let prPos = cc.v2(rm[0].x, rm[0].y); //主技能中心点
+    let prPos = cc.v2(rm[0].x, rm[0].y); //主技能中心点 ，
     this.imSkills(0, s, prPos).then(() => {
       for (let i = 0; i < s.skillNum; i++) {
+        let w = i;
+        if (s.skillType == 1 && !s.prEffect) {
+          w = i + 1;
+        }
         if (rmType != this.roles) {
-          this.impAction(rmType[i], 1);
+          this.impAction(rmType[w], 1);
         }
         if (s.buffName.length) {
           let b = this.isSkillsBuff(s);
-          // this.imBuffSkills(i, b, cc.v2(rm[i].x, rm[i].y));
-          this.imBuffSkills(b, rmType, i);
+          this.imBuffSkills(b, rmType, w);
+        }
+        if (s.yj.length) {
+          this.addYinJi(rmType, w, s.yj[0]);
         }
       }
     });
@@ -601,27 +672,37 @@ cc.Class({
       arr = this.rBuff;
       numArr = this.rBuffNum;
     }
+    let obj = arr[i];
+    let numobj = numArr[i];
+    if (b.target) {
+      obj = this.rBuff[0];
+      numobj = this.rBuffNum[0];
+    }
+    // { tb: 0, st: 0, jx: 0, sth: 0 },
+    // {
+    //   tbf: this.rtbbf1,
+    //   stsbf: this.rstsbf1,
+    //   sthbf: this.rsthbf1,
+    //   jxbf: this.rjxbf1,
+    // },
     let bw = "jxbf";
     let sl = "jx";
-    if (b.pos && b.zIndex) {
-      bw = "tbf";
-      sl = "tb";
+    switch (b.bw) {
+      case 1:
+        bw = "tbf";
+        sl = "tb";
+        break;
+      case 2:
+        bw = "stsbf";
+        s1 = "st";
+        break;
+      case 3:
+        bw = "sthbf";
+        s1 = "sth";
+        break;
     }
-    if (!b.pos && b.zIndex) {
-      bw = "stsbf";
-      s1 = "st";
-    }
-    // { tb: 0, st: 0, jx: 0 },
-    // {
-    //     tbf: this.mtbbf5,
-    //     stsbf: this.mstsbf5,
-    //     sthbf: this.msthbf5,
-    //     jxbf: this.mjxbf5,
-    //   },
     return new Promise((res, err) => {
-      let obj = arr[i];
-      let numobj = numArr[i];
-      let buff = obj[bw]; //拿到了挂载的buff
+      let buff = obj[bw]; //拿到了挂载的buff，
       if (numobj[sl] > buff.length - 1) {
         numobj[sl] = 0;
       }
@@ -636,7 +717,7 @@ cc.Class({
         res(event.name);
       });
       numobj[sl]++;
-      console.log(num, bw,"===>sdssss");
+      console.log(num, bw);
     });
   },
   // update (dt) {},
@@ -692,6 +773,92 @@ cc.Class({
     return new Promise((res, err) => {
       skills[i].armatureName = s.comName[0];
       let aArrName = skills[i].getAnimationNames(s.comName[0]);
+      skills[i].animationName = aArrName[0];
+      skills[i].playAnimation(aArrName[0], 1);
+      skills[i].node.setPosition(pos);
+      skills[i].node.active = true;
+      skills[i].once(dragonBones.EventObject.FRAME_EVENT, (event) => {
+        res(event.name);
+      });
+    });
+  },
+  //
+  //
+  //
+  //测试用vacant
+  vacantComBox() {
+    let node = cc.instantiate(this.ComboBoxPrefab);
+    let areaNameArr = [];
+    for (let i = 0; i < VS.length; i++) {
+      areaNameArr.push(VS[i].skillName); //
+    }
+    let obj = {
+      // data: ['区域一', '区域二', '区域三'], // 下拉菜单项
+      data: areaNameArr, // 下拉菜单项
+      width: 314, // 下拉菜单宽度
+      value: this.vacantIndex, // 当前区域
+    };
+    let objFunc = {
+      GetSelectedItem: this.vacantSelectedItem.bind(this),
+    };
+    node.getComponent("combobox").initData(obj);
+    node.getComponent("combobox").initEvent(objFunc);
+    this.vacantNode.addChild(node);
+  },
+  // 获取选中项
+  vacantSelectedItem(index) {
+    this.vacantIndex = index;
+    this.vacantSkills(VS[this.vacantIndex]);
+  },
+  //执行技能
+  vacantSkills(v) {
+    //判断施法方
+    let rm = v.sf ? this.roles : this.monsters;
+    this.impAction(rm[4], 4).then(() => {
+      //判断是否为战斗盘为中心
+      if (v.target == 2) {
+        this.targetTrue(v);
+      } else {
+        this.targetFalse(v);
+      }
+    });
+  },
+  targetTrue(v) {
+    // vSkill
+    let rmp = mp; // 攻击目标位置
+    let rm = this.monsters; //受击方
+    if (!v.sf && v.skillType == 2) {
+      rmp = rp;
+      rm = this.roles;
+    }
+    let pos = cc.v2(rmp[0].x, rmp[0].y);
+    this.imVSkills(0, v, pos).then(() => {
+      for (let i = 0; i < v.skillNum; i++) {
+        this.impAction(rm[i], 1);
+      }
+    });
+  },
+  targetFalse(v) {
+    for (let i = 0; i < v.skillNum; i++) {
+      let rmp = mp;
+      let rm = this.monsters;
+      if (!v.sf && v.skillType == 2) {
+        rmp = rp;
+        rm = this.roles;
+      }
+      let pos = cc.v2(rmp[i].x, rmp[i].y);
+      this.imVSkills(i, v, pos).then(() => {
+        this.impAction(rm[i], 1);
+      });
+    }
+  },
+  //执行vacant技能
+  imVSkills(i, s, pos) {
+    // let skills = s.przIndex ? this.newSkills : this.newXiaSkills; //上层:下层
+    let skills = this.vSkill;
+    return new Promise((res, err) => {
+      skills[i].armatureName = s.actionName;
+      let aArrName = skills[i].getAnimationNames(s.actionName);
       skills[i].animationName = aArrName[0];
       skills[i].playAnimation(aArrName[0], 1);
       skills[i].node.setPosition(pos);
