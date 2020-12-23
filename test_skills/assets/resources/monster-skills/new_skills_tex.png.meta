@@ -1,6 +1,6 @@
 {
   "ver": "2.3.5",
-  "uuid": "3af5527a-a4b6-4c1f-8906-de8967b8a158",
+  "uuid": "a16d7bb0-2bd4-4e45-8f0b-883ddb72b8d4",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "new_skills_tex": {
       "ver": "1.0.4",
-      "uuid": "7bed93c9-7fc8-4e06-8ea3-59c91745dad8",
-      "rawTextureUuid": "3af5527a-a4b6-4c1f-8906-de8967b8a158",
+      "uuid": "b37ae6ca-15a5-4ae9-9ad2-9ea3520d55ca",
+      "rawTextureUuid": "a16d7bb0-2bd4-4e45-8f0b-883ddb72b8d4",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

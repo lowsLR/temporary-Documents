@@ -25,6 +25,7 @@ const skillsActionJson = [
     target: 1, // 1-> 主技能以人/怪为定点，2->以战斗盘中心为定点
     buffName: [], //buff名-测试用的
     yj: [], //印记--测试用
+    sf: true, //false->怪施法--测试用
   },
   {
     id: 102,
@@ -41,6 +42,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["501"],
     yj: [],
+    sf: true
   },
   {
     id: 103,
@@ -57,6 +59,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 104,
@@ -73,6 +76,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["101"],
     yj: [],
+    sf: true
   },
   {
     id: 105,
@@ -89,6 +93,7 @@ const skillsActionJson = [
     target: 2,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 201,
@@ -105,6 +110,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 202,
@@ -121,6 +127,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["603"],
     yj: [],
+    sf: true
   },
   {
     id: 203,
@@ -137,6 +144,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["102"],
     yj: [],
+    sf: true
   },
   {
     id: 204,
@@ -153,6 +161,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["103"],
     yj: [],
+    sf: true
   },
   {
     id: 205,
@@ -169,6 +178,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["404"],
     yj: [],
+    sf: true
   },
   {
     id: 301,
@@ -185,6 +195,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 302,
@@ -201,6 +212,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 303,
@@ -217,6 +229,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 304,
@@ -233,6 +246,7 @@ const skillsActionJson = [
     target: 2,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 305,
@@ -249,6 +263,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["112"],
     yj: [],
+    sf: true
   },
   {
     id: 401,
@@ -265,6 +280,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 402,
@@ -281,6 +297,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["105"],
     yj: [],
+    sf: true
   },
   {
     id: 403,
@@ -297,6 +314,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 404,
@@ -313,6 +331,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["2"],
     yj: [],
+    sf: true
   },
   {
     id: 405,
@@ -329,6 +348,7 @@ const skillsActionJson = [
     target: 2,
     buffName: ["106"],
     yj: [],
+    sf: true
   },
   {
     id: 501,
@@ -345,6 +365,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 502,
@@ -361,6 +382,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: ["xiuLuoYin"],
+    sf: true
   },
   {
     id: 503,
@@ -377,6 +399,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: ["xiuLuoYin"],
+    sf: true
   },
   {
     id: 504,
@@ -393,6 +416,7 @@ const skillsActionJson = [
     target: 2,
     buffName: [],
     yj: ["xiuLuoYin"],
+    sf: true
   },
   {
     id: 505,
@@ -409,6 +433,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1101,
@@ -425,6 +450,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1102,
@@ -441,6 +467,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["105"],
     yj: [],
+    sf: true
   },
   {
     id: 1103,
@@ -457,6 +484,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1104,
@@ -473,6 +501,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1105,
@@ -489,6 +518,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["401"],
     yj: [],
+    sf: true
   },
   {
     id: 1201,
@@ -505,6 +535,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1202,
@@ -521,6 +552,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1203,
@@ -537,6 +569,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["201"],
     yj: [],
+    sf: true
   },
   {
     id: 1204,
@@ -553,6 +586,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["113"],
     yj: [],
+    sf: true
   },
   {
     id: 1205,
@@ -569,6 +603,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1301,
@@ -585,6 +620,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1302,
@@ -601,6 +637,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["601"],
     yj: [],
+    sf: true
   },
   {
     id: 1303,
@@ -617,6 +654,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["602"],
     yj: [],
+    sf: true
   },
   {
     id: 1304,
@@ -633,6 +671,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1305,
@@ -649,6 +688,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1401,
@@ -665,6 +705,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1402,
@@ -681,6 +722,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["402"],
     yj: [],
+    sf: true
   },
   {
     id: 1403,
@@ -697,6 +739,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1404,
@@ -713,6 +756,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 1405,
@@ -729,6 +773,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["506"],
     yj: [],
+    sf: true
   },
   {
     id: 2101,
@@ -745,6 +790,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2102,
@@ -761,6 +807,7 @@ const skillsActionJson = [
     target: 2,
     buffName: ["202"],
     yj: [],
+    sf: true
   },
   {
     id: 2103,
@@ -777,6 +824,7 @@ const skillsActionJson = [
     target: 2,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2104,
@@ -793,6 +841,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2105,
@@ -809,6 +858,7 @@ const skillsActionJson = [
     target: 2,
     buffName: ["1"],
     yj: [],
+    sf: true
   },
   {
     id: 2201,
@@ -825,6 +875,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2202,
@@ -841,6 +892,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["111"],
     yj: [],
+    sf: true
   },
   {
     id: 2203,
@@ -857,6 +909,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2204,
@@ -873,6 +926,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2205,
@@ -889,6 +943,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2301,
@@ -905,6 +960,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2302,
@@ -921,6 +977,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2303,
@@ -937,6 +994,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2304,
@@ -953,6 +1011,7 @@ const skillsActionJson = [
     target: 1,
     buffName: [],
     yj: [],
+    sf: true
   },
   {
     id: 2305,
@@ -969,6 +1028,7 @@ const skillsActionJson = [
     target: 1,
     buffName: ["301"],
     yj: [],
+    sf: true
   },
 ];
 export default skillsActionJson;
